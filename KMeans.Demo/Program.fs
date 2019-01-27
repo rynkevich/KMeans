@@ -17,7 +17,6 @@ module Program =
 
         let vectors = getVectorsFromFile inFilepath
         let clusters = Clustering.apply (vectors, clusterCount, iterationsLimit)
-
         Plotter.showClusters (clusters, vectors) "K-Means Clustering"
-
+        
         0

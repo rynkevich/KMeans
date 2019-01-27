@@ -4,7 +4,7 @@ open System.Collections.Generic
 
 let private DefaultIterationsLimit = 20
 
-let private getMeanOfCluster (vectors: double [] list, clusterVectors: IList<int>) =
+let private getMeanOfCluster (vectors: double [] list, clusterVectors: ICollection<int>) =
     let divideBy y x = x / y
     let calculateMeanComponent dimension =
         [for clusterVector in clusterVectors -> vectors.[clusterVector].[dimension]]
@@ -36,7 +36,7 @@ let private formClusters (vectors: double [] list, centroids: double [] list) =
 
 let private getRandomSublist (source: double [] list, sublistSize: int) =
     let random = new Random ()
-    let rec nextRandomItemIndex (exclusionIndexList: IList<int>) =
+    let rec nextRandomItemIndex (exclusionIndexList: ICollection<int>) =
         let index = random.Next (0, source.Length - 1)
         if exclusionIndexList.Contains index then
             nextRandomItemIndex exclusionIndexList

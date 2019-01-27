@@ -37,4 +37,5 @@ let showClusters (clusters: Dictionary<double [], List<int>>, vectors: double []
     |> Chart.WithWidth 1200
     |> Chart.WithHeight 700
     |> Chart.Show
+    
     ()
